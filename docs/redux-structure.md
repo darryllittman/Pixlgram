@@ -190,12 +190,12 @@
   - destroyComment is set as the success callback
 
 
-## Like API Response Actions
+## Comment API Response Actions
 
-receiveComment
-- invoked from an API callback
-- CommentsReducer add allPhotos.comments[comment.id] in the application's state
+- receiveComment
+  - invoked from an API callback
+  - CommentsReducer add allPhotos.comments[comment.id] in the application's state
 
-removeLike
-- invoked from an API callback
-- CommentsReducer removes allPhotos.comments[comment.id] in the application's state
+- destroyComment
+  - invoked from an API callback
+  - CommentsReducer removes allPhotos.comments[comment.id] in the application's state
