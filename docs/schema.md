@@ -63,6 +63,12 @@
 
 
 ## COMMENTS:
+| column name | data type | constraints |
+| ------------- | ------------- | ------------- |
+| id | integer | not null, primary key |
+| body | text | not null |
+| user_id | integer | not null, foreign key (user), indexed |
+| photo_id | integer | not null, foreign key (photo), indexed |
 
 - id:
   - integer
@@ -84,7 +90,7 @@
 
 
 ## LIKES:
-
+<!--
 - id:
   - integer
   - not null, primary key
@@ -95,9 +101,7 @@
 
 - photo_id:
   - integer
-  - not null, foreign key (references photo), indexed
-
-
+  - not null, foreign key (references photo), indexed -->
   | column name | data type | constraints |
   | ------------- | ------------- | ------------- |
   | id  | integer  | not null, primary key |
