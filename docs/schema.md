@@ -11,7 +11,7 @@
 | password_digest | string | not null|
 | session_token | string | not null, indexed, unique |
 | bio | text | |
-| profile_pic_id | integer | foreign key (photo), indexed |
+| profile_pic_id | integer | foreign key (photo) |
 | photos | integer | foreign keys (references photos) indexed |
 | follower_id | integer | foreign key (followers' user.id), indexed |
 | follow_id | integer | foreign keys (following user.id), indexed |
