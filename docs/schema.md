@@ -90,6 +90,12 @@
 
 
 ## LIKES:
+| column name | data type | constraints |
+| ------------- | ------------- | ------------- |
+| id  | integer  | not null, primary key |
+| user_id  | integer  | not null, foreign key (user), indexed |
+| photo_id | integer | not null, foreign key (photo), indexed |
+
 <!--
 - id:
   - integer
@@ -102,8 +108,3 @@
 - photo_id:
   - integer
   - not null, foreign key (references photo), indexed -->
-  | column name | data type | constraints |
-  | ------------- | ------------- | ------------- |
-  | id  | integer  | not null, primary key |
-  | user_id  | integer  | not null, foreign key (user), indexed |
-  | photo_id | integer | not null, foreign key (photo), indexed |
