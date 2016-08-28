@@ -1,3 +1,6 @@
+# SCHEMA
+
+
 USERS
 
 id:
@@ -81,6 +84,12 @@ COMMENTS:
 
 
 LIKES:
+| column name   | data type     | details|
+| ------------- |:-------------:| -----: |
+| id            | integer       | not null, primary key  |
+| user_id       | integer       | not null, foreign key (references user), indexed  |
+| photo_id      | integer       | not null, foreign key (references photo), indexed  |
+
 
 :id
   -integer
