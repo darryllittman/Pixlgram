@@ -50,6 +50,12 @@ PHOTOS
   -integer
     -not null, foreign key (references user), indexed
 
+:location
+  -string
+
+:caption
+  -string
+
 
 
 
@@ -58,6 +64,10 @@ COMMENTS:
 :id
   -integer
     -not null, primary key
+
+:body
+  -text
+    not null
 
 :user_id
   -integer
