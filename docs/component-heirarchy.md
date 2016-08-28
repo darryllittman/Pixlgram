@@ -1,7 +1,7 @@
 Component Heirarchy:
 
 AuthFormContainer
--Greeting
+Greeting
   -button to GuestLogin
   -button to LoginForm
   -button to SignupForm
