@@ -1,19 +1,19 @@
 # Auth Cycles:
 
 Session API Request Actions:
--signUp
-  -invoked from SignupForm onSubmit
-  -POST /api/users is called
-  -receiveCurrentUser is set as the success callback
--logIn
+- signUp
+  - invoked from SignupForm onSubmit
+  - POST /api/users is called
+  - receiveCurrentUser is set as the success callback
+- logIn
   -invoked from LoginForm onSubmit
   -POST /api/session is called
   -receiveCurrentUser is set as the success callback
--logOut
+- logOut
   -invoked from Navbar onClick
   -DELETE /api/session is called
   -removeCurrentUser is set as the success callback
--fetchCurrentUser
+- fetchCurrentUser
   -invoked from App in componentDidMount
   -GET /api/session is called
   -receiveCurrentUser is set as the success callback
