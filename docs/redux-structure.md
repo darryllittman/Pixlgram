@@ -1,6 +1,26 @@
 # Auth Cycles:
 
 ## Session API Request Actions:
+- signUp
+  - invoked from SignupForm onSubmit
+  - POST /api/users is called
+  - receiveCurrentUser is set as success callback
+
+- login
+  - invoked from LoginForm
+  - POST /api/session is called
+  - receiveCurrentUser is set as success callback
+
+- logout
+  - invoked from Navbar onClick
+  - DELETE /api/session is called
+  - removeCurrentUser is set as success callback
+
+- fetchCurrentUser
+  - invoked from APP in componentDidMount
+  - GET /api/session is called
+  - receiveCurrentUser is set as success callback
+
 
 
 Session API Response Actions:
@@ -22,42 +42,40 @@ Error Cycles:
 
 
 User API Request Actions:
+- fetchAllFollowers
+  - invoked from UserPage at UserInfo (number of followers) onClick
+  - GET /api/users/:currentUser.id/followers
+  - receiveFollowers is set as the success callback
 
-fetchAllFollowers
-- invoked from UserPage at UserInfo (number of followers) onClick
-- GET /api/users/:currentUser.id/followers
-- receiveFollowers is set as the success callback
+- fetchAllFollowing
+  - invoked from UserPage at UserInfo (number of following) onClick
+  - GET /api/users/:currentUser.id/following
+  - receiveFollowing is set as the success callback
 
-fetchAllFollowing
-- invoked from UserPage at UserInfo (number of following) onClick
-- GET /api/users/:currentUser.id/following
-- receiveFollowing is set as the success callback
-
-updateProfile
-- invoked from EditProfile at EditProfileForm onSubmit
-- POST /api/users/:currentUser.id is called
-- receiveUserInfo is set as the success callback
+- updateProfile
+  - invoked from EditProfile at EditProfileForm onSubmit
+  - POST /api/users/:currentUser.id is called
+  - receiveUserInfo is set as the success callback
 
 
 User API Response Actions:
+- receiveFollowers
+  - invoked from an API callback
+  - UsersReducer updates currentUser.followers in the application's state
 
-receiveFollowers
-- invoked from an API callback
-- UsersReducer updates currentUser.followers in the application's state
+- receiveFollowing
+  - invoked from an API callback
+  - UsersReducer updates currentUser.following in the application's state
 
-receiveFollowing
-- invoked from an API callback
-- UsersReducer updates currentUser.following in the application's state
-
-receiveUserInfo
-- invoked from an API callback
-- UsersReducer updates currentUser.username, currentUser.ProfilePic and currentUser.bio in the application's state
-
+- receiveUserInfo
+  - invoked from an API callback
+  - UsersReducer updates currentUser.username, currentUser.ProfilePic and currentUser.bio in the application's state
 
 
 
 
-Photo API Request Actions
+
+Photo API Request Actions:
 
 fetchAllUserPhotos
 - invoked from UserPage OR OtherUserPage on componentDidMount
