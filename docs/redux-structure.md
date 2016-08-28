@@ -1,32 +1,32 @@
-Auth Cycles:
+# Auth Cycles:
 
-Session API Request Actions:
--signUp
+## Session API Request Actions:
+*signUp
   -invoked from SignupForm onSubmit
   -POST /api/users is called
   -receiveCurrentUser is set as the success callback
--logIn
+*logIn
   -invoked from LoginForm onSubmit
   -POST /api/session is called
   -receiveCurrentUser is set as the success callback
--logOut
+*logOut
   -invoked from Navbar onClick
   -DELETE /api/session is called
   -removeCurrentUser is set as the success callback
--fetchCurrentUser
+*fetchCurrentUser
   -invoked from App in componentDidMount
   -GET /api/session is called
   -receiveCurrentUser is set as the success callback
 
-Session API Response Actions:
+## Session API Response Actions:
 -receiveCurrentUser
   -invoked from an API callback
   -SessionReducer stores currentUser in the application's state
 -removeCurrentUser
   -invoked from an API callback
   -SessionReducer removes currentUser from the application's state
-
-Error Cycles:
+  
+## Error Cycles:
 -setErrors
   -Invoked from API callbacks on error for actions that generate POST requests
   -ErrorReducer stores the form in the application's state; errors are mapped to their respective forms
@@ -36,7 +36,7 @@ Error Cycles:
 
 
 
-User API Request Actions:
+## User API Request Actions:
 
 fetchAllFollowers
 -invoked from UserPage at UserInfo (number of followers) onClick
@@ -54,7 +54,7 @@ updateProfile
 -receiveUserInfo is set as the success callback
 
 
-User API Response Actions:
+## User API Response Actions:
 
 receiveFollowers
 -invoked from an API callback
@@ -72,7 +72,7 @@ receiveUserInfo
 
 
 
-Photo API Request Actions
+## Photo API Request Actions
 
 fetchAllUserPhotos
 -invoked from UserPage OR OtherUserPage on componentDidMount
@@ -97,7 +97,7 @@ destroyPhoto
 
 
 
-Photo API Response Actions
+## Photo API Response Actions
 
 receiveAllUserPhotos
 -invoked from an API callback
@@ -122,7 +122,7 @@ removePhoto
 
 
 
-Follow API Request Actions
+## Follow API Request Actions
 
 newFollow
 -invoked from Follow button onClick
@@ -135,7 +135,7 @@ unFollow
 -removeFollower is set as the success callback
 
 
-Follow API Response Actions
+## Follow API Response Actions
 
 addFollow
 -invoked from an API callback
@@ -149,7 +149,7 @@ removeFollow
 
 
 
-Like API Request Actions
+## Like API Request Actions
 
 likePhoto
 -invoked from photo's like button onClick
@@ -162,7 +162,7 @@ unlikePhoto
 -removeLike is set as the success callback
 
 
-Like API Response Actions
+## Like API Response Actions
 
 addLike
 -invoked from an API callback
@@ -174,7 +174,7 @@ removeLike
 
 
 
-Comment API Request Actions
+## Comment API Request Actions
 
 addComment
 -invoked from photo's comment input onEnter
@@ -187,7 +187,7 @@ removeComment
 -destroyComment is set as the success callback
 
 
-Like API Response Actions
+## Like API Response Actions
 
 receiveComment
 -invoked from an API callback
