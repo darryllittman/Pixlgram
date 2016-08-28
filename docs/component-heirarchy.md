@@ -59,6 +59,7 @@ EditProfileContainer
 -Username
   -EditProfileForm
     -Name, Username, Textarea inputs
+    -button to edit ProfilePic
     -Submit button
 -Footer
 
@@ -69,6 +70,7 @@ PhotoViewContainer
   -list of likes
   -caption
   -Comments
+  -button to delete photo
 
 AddPhotoFormContainer
 -header
@@ -86,6 +88,11 @@ ExploreContainer (bonus)
     -3 Photos, Username, FullName
     -button to Follow
 
+FollowContainer
+  -List of followers or following
+    -info about Username and Fullname
+    -button to Follow/Unfollow
+
 
 Routes:
 "/signup", "AuthFormContainer"
@@ -95,4 +102,6 @@ Routes:
 "/users/:id/add_photo", "AddPhotoFormContainer"
 "/users/:id/edit", "EditProfileContainer"
 "/users/:id/photos/:photo_id", "PhotoViewContainer"
+"/users/:id/followers", "FollowContainer"
+"/users/:id/followers", "FollowContainer"
 "/home/explore", "ExploreContainer" (Bonus)

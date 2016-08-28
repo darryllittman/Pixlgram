@@ -90,7 +90,7 @@ addPhoto
 -receiveNewPhoto is set as the callback
 
 destroyPhoto
--invoked from any of currentUser's photos onClick
+-invoked from any of currentUser's photos view page onClick
 -Post /api/photos/:photo.id
 -removePhoto is set as the success callback
 
