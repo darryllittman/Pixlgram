@@ -23,7 +23,7 @@
 
 
 
-Session API Response Actions:
+## Session API Response Actions:
 - receiveCurrentUser
   - invoked from an API callback
   - SessionReducer stores currentUser in the application's state
@@ -31,7 +31,7 @@ Session API Response Actions:
   - invoked from an API callback
   - SessionReducer removes currentUser from the application's state
 
-Error Cycles:
+## Error Cycles:
 - setErrors
   - Invoked from API callbacks on error for actions that generate POST requests
   - ErrorReducer stores the form in the application's state; errors are mapped to their respective forms
@@ -41,7 +41,7 @@ Error Cycles:
 
 
 
-User API Request Actions:
+## User API Request Actions:
 - fetchAllFollowers
   - invoked from UserPage at UserInfo (number of followers) onClick
   - GET /api/users/:currentUser.id/followers
@@ -58,7 +58,7 @@ User API Request Actions:
   - receiveUserInfo is set as the success callback
 
 
-User API Response Actions:
+## User API Response Actions:
 - receiveFollowers
   - invoked from an API callback
   - UsersReducer updates currentUser.followers in the application's state
@@ -75,122 +75,122 @@ User API Response Actions:
 
 
 
-Photo API Request Actions:
+## Photo API Request Actions:
 
-fetchAllUserPhotos
-- invoked from UserPage OR OtherUserPage on componentDidMount
-- GET /api/users/:user.id/photos is called
-- receiveAllUserPhotos is set as the success callback
+- fetchAllUserPhotos
+  - invoked from UserPage OR OtherUserPage on componentDidMount
+  - GET /api/users/:user.id/photos is called
+  - receiveAllUserPhotos is set as the success callback
 
-fetchSinglePhoto
-- invoked from any single photo (ie UserPage OR OtherUserPage OR PhotoFeed) onClick
-- GET /api/photos/:photo.id
-- receiveSinglePhoto is set as the success callback
+- fetchSinglePhoto
+  - invoked from any single photo (ie UserPage OR OtherUserPage OR PhotoFeed) onClick
+  - GET /api/photos/:photo.id
+  - receiveSinglePhoto is set as the success callback
 
-addPhoto
-- invoked from Navbar onClick
-- POST /api/users/:currentUser.id/photos
-- receiveNewPhoto is set as the callback
+- addPhoto
+  - invoked from Navbar onClick
+  - POST /api/users/:currentUser.id/photos
+  - receiveNewPhoto is set as the callback
 
-destroyPhoto
-- invoked from any of currentUser's photos view page onClick
-- Post /api/photos/:photo.id
-- removePhoto is set as the success callback
-
-
-
-
-Photo API Response Actions
-
-receiveAllUserPhotos
-- invoked from an API callback
-- UsersReducer updates currentUser.photos and users.photos in the application's state
-- PhotosReducer updates allPhotos in the application's state
-
-receiveSinglePhoto
-- invoked from an API callback
-- UsersReducer updates currentUser.photos and users.photos in the application's state
-- PhotosReducer updates allPhotos in the application's state
-
-receiveNewPhoto
-- invoked from an API callback
-- UsersReducer updates currentUser.photos in the application's state
-- PhotosReducer updates allPhotos in the application's state
-
-removePhoto
-- invoked from an API callback
-- UsersReducer updates currentUser.photos in the application's state
-- PhotosReducer updates allPhotos in the application's state
+- destroyPhoto
+  - invoked from any of currentUser's photos view page onClick
+  - Post /api/photos/:photo.id
+  - removePhoto is set as the success callback
 
 
 
 
-Follow API Request Actions
+## Photo API Response Actions:
 
-newFollow
-- invoked from Follow button onClick
-- POST /api/users/:currentUser.id/following is called
-- addFollow is set as the success callback
+- receiveAllUserPhotos
+  - invoked from an API callback
+  - UsersReducer updates currentUser.photos and users.photos in the application's state
+  - PhotosReducer updates allPhotos in the application's state
 
-unFollow
-- invoked from Follow button onClick
-- DELETE /api/users/:currentUser.id/following is called
-- removeFollower is set as the success callback
+- receiveSinglePhoto
+  - invoked from an API callback
+  - UsersReducer updates currentUser.photos and users.photos in the application's state
+  - PhotosReducer updates allPhotos in the application's state
 
+- receiveNewPhoto
+  - invoked from an API callback
+  - UsersReducer updates currentUser.photos in the application's state
+  - PhotosReducer updates allPhotos in the application's state
 
-Follow API Response Actions
-
-addFollow
-- invoked from an API callback
-- UsersReducer updates currentUser.following in the application's state
-- UsersReducer updates users[follower_id].followers in the application's state
-
-removeFollow
-- invoked from an API callback
-- UsersReducer updates currentUser.following in the application's state
-- UsersReducer updates users[follower_id].followers in the application's state
+- removePhoto
+  - invoked from an API callback
+  - UsersReducer updates currentUser.photos in the application's state
+  - PhotosReducer updates allPhotos in the application's state
 
 
 
-Like API Request Actions
 
-likePhoto
-- invoked from photo's like button onClick
-- POST /api/photos/:photo.id/likes
-- addLike is set as the success callback
+## Follow API Request Actions:
 
-unlikePhoto
-- invoked from photo's like button onClick
-- DELETE /api/photos/:photo.id/likes/currentUser.id
-- removeLike is set as the success callback
+- newFollow
+  - invoked from Follow button onClick
+  - POST /api/users/:currentUser.id/following is called
+  - addFollow is set as the success callback
 
-
-Like API Response Actions
-
-addLike
-- invoked from an API callback
-- LikesReducer adds currentUser to allPhotos.likes in the application's state
-
-removeLike
-- invoked from an API callback
-- LikesReducer deletes currentUser from allPhotos.likes in the application's state
+- unFollow
+  - invoked from Follow button onClick
+  - DELETE /api/users/:currentUser.id/following is called
+  - removeFollower is set as the success callback
 
 
+## Follow API Response Actions:
 
-Comment API Request Actions
+- addFollow
+  - invoked from an API callback
+  - UsersReducer updates currentUser.following in the application's state
+  - UsersReducer updates users[follower_id].followers in the application's state
 
-addComment
-- invoked from photo's comment input onEnter
-- POST /api/photos/:photo.id/comments
-- receiveComment is set as the success callback
-
-removeComment
-- invoked from photo's comment "x" onClick
-- DELETE /api/photos/:photo.id/comments/:comment.id
-- destroyComment is set as the success callback
+- removeFollow
+  - invoked from an API callback
+  - UsersReducer updates currentUser.following in the application's state
+  - UsersReducer updates users[follower_id].followers in the application's state
 
 
-Like API Response Actions
+
+## Like API Request Actions:
+
+- likePhoto
+  - invoked from photo's like button onClick
+  - POST /api/photos/:photo.id/likes
+  - addLike is set as the success callback
+
+- unlikePhoto
+  - invoked from photo's like button onClick
+  - DELETE /api/photos/:photo.id/likes/currentUser.id
+  - removeLike is set as the success callback
+
+
+## Like API Response Actions:
+
+- addLike
+  - invoked from an API callback
+  - LikesReducer adds currentUser to allPhotos.likes in the application's state
+
+- removeLike
+  - invoked from an API callback
+  - LikesReducer deletes currentUser from allPhotos.likes in the application's state
+
+
+
+## Comment API Request Actions:
+
+- addComment
+  - invoked from photo's comment input onEnter
+  - POST /api/photos/:photo.id/comments
+  - receiveComment is set as the success callback
+
+- removeComment
+  - invoked from photo's comment "x" onClick
+  - DELETE /api/photos/:photo.id/comments/:comment.id
+  - destroyComment is set as the success callback
+
+
+## Like API Response Actions
 
 receiveComment
 - invoked from an API callback
