@@ -44,8 +44,14 @@
 
 
 ## PHOTOS
+| column name | data type | constraints |
+| ------------- | ------------- | ------------- |
+| id | integer | not null, primary key |
+| user_id | integer | not null, foreign key (user) indexed |
+| location | string | |
+| caption | string | |
 
-- id:
+<!-- - id:
   - integer
   - not null, primary key
 
@@ -57,7 +63,7 @@
   - string
 
 - caption:
-  - string
+  - string -->
 
 
 
@@ -70,7 +76,7 @@
 | user_id | integer | not null, foreign key (user), indexed |
 | photo_id | integer | not null, foreign key (photo), indexed |
 
-- id:
+<!-- - id:
   - integer
   - not null, primary key
 
@@ -85,7 +91,7 @@
 - photo_id:
   - integer
   - not null, foreign key (references photo), indexed
-
+ -->
 
 
 
