@@ -96,3 +96,9 @@
 - photo_id:
   - integer
   - not null, foreign key (references photo), indexed
+
+
+  | First Header  | Second Header |
+  | ------------- | ------------- |
+  | Content Cell  | Content Cell  |
+  | Content Cell  | Content Cell  |
