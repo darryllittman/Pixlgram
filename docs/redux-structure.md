@@ -91,7 +91,7 @@ addPhoto
 
 destroyPhoto
 -invoked from any of currentUser's photos onClick
--Post /api/photos/:currentUser.id/photos/:photo.id
+-Post /api/photos/:photo.id
 -removePhoto is set as the success callback
 
 
@@ -131,7 +131,7 @@ newFollow
 
 unFollow
 -invoked from Follow button onClick
--POST /api/users/:currentUser.id/following is called
+-DELETE /api/users/:currentUser.id/following is called
 -removeFollower is set as the success callback
 
 
@@ -153,7 +153,7 @@ Like API Request Actions
 
 likePhoto
 -invoked from photo's like button onClick
--POST /api/photos/:photo.id/likes/currentUser.id
+-POST /api/photos/:photo.id/likes
 -addLike is set as the success callback
 
 unlikePhoto
@@ -166,11 +166,11 @@ Like API Response Actions
 
 addLike
 -invoked from an API callback
--LikesReducer updates allPhotos.likes in the application's state
+-LikesReducer adds currentUser to allPhotos.likes in the application's state
 
 removeLike
 -invoked from an API callback
--LikesReducer updates allPhotos.likes in the application's state
+-LikesReducer deletes currentUser from allPhotos.likes in the application's state
 
 
 
@@ -178,7 +178,7 @@ Comment API Request Actions
 
 addComment
 -invoked from photo's comment input onEnter
--POST /api/photos/:photo.id/comments/:comment.id
+-POST /api/photos/:photo.id/comments
 -receiveComment is set as the success callback
 
 removeComment

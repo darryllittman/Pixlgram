@@ -30,11 +30,11 @@ photos:
 -integer
   -foreign keys (references photos), indexed
 
-followers_id:
+follower_id:
 -integer
   -foreign keys (references followers' user.id), indexed
 
-following_id:
+follow_id:
 -integer
   -foreign keys (references following user.id), indexed
 
@@ -67,7 +67,7 @@ COMMENTS:
 
 :body
   -text
-    not null
+    -not null
 
 :user_id
   -integer
