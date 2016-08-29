@@ -12,3 +12,11 @@ Pixlgram is a photo sharing web application inspired by instagram and built on R
 - [ ] Following and Photo Feed
 - [ ] **BONUS**: hashtags
 - [ ] **BONUS**: direct messaging
+
+## Design Docs
+[Wireframes](./wireframes)
+[React Components](./component-hierarchy.md)
+[Sample State](./sample-state.md)
+[Redux Architecture](./redux-structure.md)
+[DB Schema](./schema.md)
+[API Endpoints](./api-endpoints.md)
