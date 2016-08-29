@@ -29,10 +29,31 @@ Pixlgram is a photo sharing web application inspired by instagram and built on R
 - [ ] New Rails project
 - [ ] User model/migration
 - [ ] Back end authentication (session/password)
+
+- [ ] Redux cycle for front end authentication
+  - SessionReducer
+  - Session Actions/Constants
+  - Session API Util
+  - AuthFormContainer
+  - Action-Creators
+    - signup
+    - login
+    - logout
+    - receiveCurrentUser
+    - receiveErrors
+  - API functions
+    - signup
+    - login
+    - logout
+  - SessionMiddleware
+  - Front End Routes
+    - "/signup"
+    - "/signin"
+    - "/home"
+
 - [ ] StaticPages controller and root view
 - [ ] Webpack and react/redux modules
 - [ ] APIUtil to interact with API
-- [ ] Redux cycle for front end authentication
 - [ ] User signup/login/logout/edit profile components
 - [ ] Guest login
 - [ ] Blank entry PhotoFeed component after successful signup/login
