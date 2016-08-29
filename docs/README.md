@@ -33,9 +33,39 @@ Pixlgram is a photo sharing web application inspired by instagram and built on R
 - [ ] Webpack and react/redux modules
 - [ ] APIUtil to interact with API
 - [ ] Redux cycle for front end authentication
-- [ ] User signup/login/logout components
+- [ ] User signup/login/logout/edit profile components
+- [ ] Guest login
 - [ ] Blank entry PhotoFeed component after successful signup/login
-- [ ] Basic styling for signup/login components
+- [ ] Basic styling for signup/login/guest components
 - [ ] Seed users
 
- <!-- ### Phase 2: -->
+### Phase 2: Photos Model, API, PhotoFeed Component, Photo Hosting, React-Infinite(3 days)
+- [ ] Photo Model
+- [ ] Find and setup hosting service to host photos
+- [ ] Ability to upload photos through hosting service
+- [ ] Seed test data (to both hosting service and database)
+- [ ] CRUD API for photos (PhotosController)
+- [ ] JBuilder views for photos
+- [ ] PhotoFeed components (AllPhotos, PhotoHeader, PhotoFooter) with Redux loops
+- [ ] AddPhoto form
+- [ ] Basic styling for PhotoFeed components
+- [ ] React-Infinite (infinite scroll)
+
+### Phase 3: Navbar, UserPageContainer, OtherUserContainer and PhotoViewContainer Components (2 days)
+- [ ] Create Navbar component and all links/buttons
+- [ ] Create UserPageContainer and redux cycles
+- [ ] Create OtherUserContainer and redux cycles
+- [ ] Create PhotoViewContainer and redux cycles
+- [ ] Basic styling of Navbar, UserPageContainer, OtherUserContainer and PhotoViewContainer components
+
+### Phase 4: FollowContainer Components, Comment Functionality and Likes functionality, final seeding (2 days)
+- [ ] Create FollowContainer including followers list, following list and view
+- [ ] Likes functionality of photos
+- [ ] Comments functionality of photos
+- [ ] Styling of following list
+- [ ] Styling of followers list
+- [ ] Final complete seeding of data
+
+### Phase 5: Final Styling, Lots of testing
+- [ ] Final touches on styling and bug fixes
+- [ ] Ensure all MVP features are rock solid
