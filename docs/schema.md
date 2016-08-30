@@ -127,9 +127,9 @@
 - photo_id:
   - integer
   - not null, foreign key (references photo), indexed -->
-  ## FOLLOWS:
-  | column name | data type | constraints |
-  | ------------- | ------------- | ------------- |
-  | id  | integer  | not null, primary key |
-  | follow_id| integer | not null, foreign key, indexed|
-  | follower_id| integer | not null, foreign key currentUser), indexed|
+## FOLLOWS:
+| column name | data type | constraints |
+| ------------- | ------------- | ------------- |
+| id  | integer  | not null, primary key |
+| follow_id| integer | not null, foreign key, indexed |
+| follower_id| integer | not null, foreign key currentUser), indexed |
