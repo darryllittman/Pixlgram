@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import configureStore from './store';
+import configureStore from './store/store';
 
-// const configuredStore = configureStore();
+const configuredStore = window.store = configureStore();
 const Root = () => (
-  <div>Hi there.</div>
+  <div>Hi</div>
 );
 
 document.addEventListener("DOMContentLoaded", () => {
