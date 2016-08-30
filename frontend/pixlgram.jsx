@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
+// import {SessionConstants, login} from './actions/session_actions';
 
 const configuredStore = window.store = configureStore();
 const Root = () => (
