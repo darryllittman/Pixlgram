@@ -12,9 +12,9 @@
 | session_token | string | not null, indexed, unique |
 | bio | text | |
 | profile_pic_id | integer | foreign key (photo) |
-| photos | integer | foreign keys (references photos) indexed |
+<!-- | photos | integer | foreign keys (references photos) indexed |
 | follower_id | integer | foreign key (followers' user.id), indexed |
-| follow_id | integer | foreign keys (following user.id), indexed |
+| follow_id | integer | foreign keys (following user.id), indexed | -->
 
 <!-- - id:
   - integer
@@ -127,3 +127,9 @@
 - photo_id:
   - integer
   - not null, foreign key (references photo), indexed -->
+  ## FOLLOWS:
+  | column name | data type | constraints |
+  | ------------- | ------------- | ------------- |
+  | id  | integer  | not null, primary key |
+  | follow_id| integer | not null, foreign key (user following), indexed|
+  | follower_id| integer | not null, foreign key (user following currentUser), indexed|
