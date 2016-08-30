@@ -131,5 +131,5 @@
   | column name | data type | constraints |
   | ------------- | ------------- | ------------- |
   | id  | integer  | not null, primary key |
-  | follow_id| integer | not null, foreign key (user following), indexed|
-  | follower_id| integer | not null, foreign key (user following currentUser), indexed|
+  | follow_id| integer | not null, foreign key, indexed|
+  | follower_id| integer | not null, foreign key currentUser), indexed|
