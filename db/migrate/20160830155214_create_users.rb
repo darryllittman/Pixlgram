@@ -7,13 +7,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :full_name
       t.text :bio
       t.integer :profile_pic_id
-      # t.integer :photos
-      # t.integer :follower_id
-      # t.integer :follow_id
 
       t.timestamps null: false
     end
 
     add_index :users, :username, unique: true
+    add_index :users, :session_token, unique: true
+    add_index :users, :profile_pic_id
   end
 end
