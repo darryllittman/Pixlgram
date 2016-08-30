@@ -1,4 +1,5 @@
 import { merge } from 'loadsh';
+import { GreetingConstants } from '../actions/greeting_actions';
 
 const _defaultGreeting = Object.freeze({
   currentUser: {}
