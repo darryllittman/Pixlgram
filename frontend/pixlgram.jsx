@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-// import {SessionConstants, login} from './actions/session_actions';
+// import { SessionConstants, login, logout, signup } from './actions/session_actions';
+
+//
+// window.login = login;
+// window.logout = logout;
+// window.signup = signup;
 
 const configuredStore = window.store = configureStore();
 const Root = () => (
