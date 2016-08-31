@@ -1,7 +1,7 @@
 import React from 'react';
 
-const LoginForm = () => (
+const AuthForm = () => (
   <div>Form Goes Here</div>
 );
 
-export default LoginForm;
+export default AuthForm;

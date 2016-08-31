@@ -1,8 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
-const test = (router, url) => {
-  console.log("working");
+const renderAuthForm = (router, url) => {
   router.push(url);
 };
 
@@ -12,10 +11,10 @@ const Greeting = ({ router }) => (
         <button to="/home" className="guest-login">Guest
             Login</button>
           <button className="login"
-            onClick={()=>(test(router, "/login"))}>
+            onClick={()=>(renderAuthForm(router, "/login"))}>
             Login</button>
           <button className="signup"
-            onClick={()=>(test(router, "/signup"))}>
+            onClick={()=>(renderAuthForm(router, "/signup"))}>
             Create an Account</button>
       </div>
     );
