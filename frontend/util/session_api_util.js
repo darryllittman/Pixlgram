@@ -4,8 +4,8 @@ import { receiveCurrentUser, receiveErrors }
 export const signup = (user, success, error) => {
   $.ajax({
     method: "POST",
-    url: "/api/user",
-    data: {user: user},
+    url: "/api/users",
+    data: {user: {username: user.username, password: user.password, fullname: user.fullname}},
     success,
     error
   });
@@ -15,7 +15,7 @@ export const login = (user, success, error) => {
   $.ajax({
     method: "POST",
     url: "/api/session",
-    data: {user: user},
+    data: {user: {username: user.username, password: user.password}},
     success,
     error
   });

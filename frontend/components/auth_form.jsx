@@ -1,32 +1,71 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
-
-const SignupForm = () => (
-  <div>In Sign Up Form</div>
-);
-
-const LoginForm = () => (
-  <div>In Login Form</div>
-);
-
-const AuthForm = ({ router }) => {
-  console.log(router.isActive('/login'));
-  console.log(router.isActive('/signup'));
-
-
-  let form;
-  if (router.isActive('/signup')) {
-    form = SignupForm();
-  } else if (router.isActive('/login')) {
-    form = LoginForm();
+class AuthForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {username: "", password: "", fullName: ""};
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  console.log(form);
 
-  return(
-    <div>{form}</div>
-  );
-};
+  update(key) {
+    return (e) => {
+      this.setState({[key]: e.currentTarget.value});
+    };
+  }
 
-// export default AuthForm;
+  handleSubmit (title) {
+    const that = this;
+    return (e) => {
+      e.preventDefault();
+      return (title === "Login") ? that.props.login(that.state) :
+        that.props.signup(that.state);
+    };
+
+
+  }
+
+  render() {
+    let form;
+    let formClass;
+    let fullName;
+    let title;
+    if (this.props.router.isActive('/signup')) {
+      formClass = "signup-form";
+      fullName =     (<label>Full Name:
+                            <input type="text"></input>
+                      </label>);
+      title = "Signup";
+    } else if (this.props.router.isActive('/login')) {
+      formClass = "login-form";
+      title = "Login";
+    }
+
+    return(
+
+      <div className={formClass}>
+        <h1 className="logo">Pixlgram</h1>
+        <h3>{title}</h3>
+
+        <form onSubmit={this.handleSubmit(title)}>
+          <label>Username:
+            <input type="text" value={this.state.username}
+              onChange={this.update("username")} />
+          </label>
+          {fullName}
+          <label>Password:
+            <input type="password" value={this.state.password}
+              onChange={this.update("password")} />
+          </label>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
+    );
+  }
+}
+
+
 export default withRouter(AuthForm);

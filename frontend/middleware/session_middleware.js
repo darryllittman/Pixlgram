@@ -4,11 +4,16 @@ import {
   logout
 } from '../util/session_api_util';
 
+import { hashHistory } from 'react-router';
+
 import { receiveCurrentUser, receiveErrors, SessionConstants}
   from '../actions/session_actions';
 
 const SessionMiddleware = ({getState, dispatch}) => next => action => {
-  const successCallback = user => dispatch(receiveCurrentUser(user));
+  const successCallback = user => {
+    hashHistory.push("/");
+    dispatch(receiveCurrentUser(user));
+  };
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
     dispatch(receiveErrors(errors));

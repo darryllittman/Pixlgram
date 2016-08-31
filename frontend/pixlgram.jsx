@@ -26,4 +26,4 @@ window.test = () => {
   const errorCallback = (e) => console.log(e);
 
   configuredStore.dispatch(login(user, success, errorCallback));
-}
+};

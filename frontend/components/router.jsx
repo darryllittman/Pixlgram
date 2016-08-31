@@ -9,8 +9,8 @@ const AppRouter = () => (
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
       <IndexRoute component={ Greeting } />
-      <Route path="login" component={ AuthFormContainer }/>
-      <Route path="signup" component={ AuthFormContainer }/>
+      <Route path="login" component={ AuthFormContainer } />
+      <Route path="signup" component={ AuthFormContainer } />
     </Route>
   </Router>
 );
