@@ -8,16 +8,27 @@ const renderAuthForm = (router, url) => (e) => {
 
 const Greeting = ({ router }) => (
       <div className="greeting">
-        <h1>Pixlgram</h1>
-        <br/>
-        <button to="/home" className="guest-login">Guest
-            Login</button>
-        <button className="login"
-          onClick={renderAuthForm(router, "/login")}>
-          Login</button>
-        <button className="signup"
-            onClick={renderAuthForm(router, "/signup")}>
-            Create an Account</button>
+        <section className="entry-photo">Photo Here</section>
+
+        <section className="entry-buttons">
+          <header><h1>Pixlgram</h1></header>
+
+          <button to="/home" className="guest-login-button">Guest
+              Login
+          </button>
+
+          <div className="auth-buttons">
+            <button className="login-button"
+              onClick={renderAuthForm(router, "/login")}>
+              Login
+            </button>
+            <button className="signup-button"
+                onClick={renderAuthForm(router, "/signup")}>
+                Create an Account
+            </button>
+          </div>
+        </section>
+
       </div>
     );
 

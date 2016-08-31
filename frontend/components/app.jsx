@@ -3,7 +3,7 @@ import Greeting from './greeting';
 
 
 const App = ({ children }) => (
-  <div>
+  <div className="app">
     {children}
   </div>
 );
