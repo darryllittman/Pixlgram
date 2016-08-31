@@ -1,11 +1,13 @@
 import { createStore } from 'redux';
-import { RootReducer } from '../reducers/root_reducer';
+import RootReducer  from '../reducers/root_reducer';
 import SessionReducer from '../reducers/session_reducer';
+import RootMiddleware from '../middleware/root_middleware';
 
 const configureStore = (preloadedState = {}) => (
   createStore(
-    SessionReducer,
-    preloadedState
+    RootReducer,
+    preloadedState,
+    RootMiddleware
   )
 );
 

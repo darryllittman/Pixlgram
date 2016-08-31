@@ -1,13 +1,12 @@
 import {
-  receiveCurrentUser,
-  receiveErrors,
-  SessionConstants,
   login,
   signup,
   logout
 } from '../util/session_api_util';
 
-// import { login, signup, logout } from '../util/session_api_util';
+import { receiveCurrentUser, receiveErrors, SessionConstants}
+  from '../actions/session_actions';
+
 const SessionMiddleware = ({getState, dispatch}) => next => action => {
   const successCallback = user => dispatch(receiveCurrentUser(user));
   const errorCallback = xhr => {

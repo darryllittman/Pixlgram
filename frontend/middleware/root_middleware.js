@@ -1,7 +1,7 @@
-import { applyMiddleware } from 'react-redux';
+import { applyMiddleware } from 'redux';
 import SessionMiddleware from './session_middleware';
+import logger from 'redux-logger';
 
-const RootMiddleware =
-  applyMiddleware(SessionMiddleware);
+const RootMiddleware = applyMiddleware(logger(), SessionMiddleware);
 
 export default RootMiddleware;

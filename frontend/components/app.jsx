@@ -2,7 +2,7 @@ import React from 'react';
 import Greeting from './greeting';
 
 
-const App = ({children}) => (
+const App = ({ children }) => (
   <div>
     {children}
   </div>

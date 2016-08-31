@@ -1,6 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
+// const renderAuthForm = (router, url) => (e) => {
+//   e.preventDefault();
+//   router.push(url);
+// };
+
 const renderAuthForm = (router, url) => {
   router.push(url);
 };
