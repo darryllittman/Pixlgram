@@ -1,11 +1,23 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
-const Greeting = () => (
-  <div>
-    <button to="/home">Guest Login</button>
-    <button to="/login">Login</button>
-    <button to="/signup">Create an Account</button>
-  </div>
-);
+const test = (router, url) => {
+  console.log("working");
+  router.push(url);
+};
 
-export default Greeting;
+const Greeting = ({ router }) => (
+      <div>
+        <h1>Pixlgram</h1>
+        <button to="/home" className="guest-login">Guest
+            Login</button>
+          <button className="login"
+            onClick={()=>(test(router, "/login"))}>
+            Login</button>
+          <button className="signup"
+            onClick={()=>(test(router, "/signup"))}>
+            Create an Account</button>
+      </div>
+    );
+
+export default withRouter(Greeting);
