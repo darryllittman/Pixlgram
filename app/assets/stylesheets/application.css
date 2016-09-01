@@ -22,7 +22,7 @@ img {
   height: auto;
 }
 
-.greeting {
+.greeting, .login-form {
   margin: 0 auto;
   display: flex;
   height: 400px;
@@ -53,13 +53,24 @@ section.entry-photo {
 
 }
 
+.username-input, .password-input, .full-name-input {
+  display: block;
+}
+
+.auth-form {
+  background: green;
+}
+
+.auth-form-title {
+  display: block;
+}
+
 .entry-photo {
   width: 50%;
 }
 
-.entry-buttons>button {
-  margin: 3%;
-
+.logo {
+  text-align: center;
 }
 
 header {

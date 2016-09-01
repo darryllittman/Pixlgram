@@ -34,33 +34,48 @@ class AuthForm extends React.Component {
     if (this.props.router.isActive('/signup')) {
       formClass = "signup-form";
       fullName =     (<label>Full Name:
-                            <input type="text"></input>
+                            <input className="full-name-input"
+                                   type="text" />
                       </label>);
-      title = "Signup";
+      title = "Sign up to see photos of your friends";
     } else if (this.props.router.isActive('/login')) {
       formClass = "login-form";
-      title = "Login";
+      title = "Log in to see photos of your friends";
     }
 
     return(
 
       <div className={formClass}>
-        <h1 className="logo">Pixlgram</h1>
-        <h3>{title}</h3>
+        <section className="entry-photo">Photo Here</section>
 
-        <form onSubmit={this.handleSubmit(title)}>
-          <label>Username:
-            <input type="text" value={this.state.username}
-              onChange={this.update("username")} />
-          </label>
-          {fullName}
-          <label>Password:
-            <input type="password" value={this.state.password}
-              onChange={this.update("password")} />
-          </label>
 
-          <input type="submit" value="Submit" />
-        </form>
+        <section className="auth-form">
+          <h1 className="logo">Pixlgram</h1>
+          <h3 className="auth-form-title">{title}</h3>
+
+
+          <form className="auth-form"
+                onSubmit={this.handleSubmit(title)}>
+
+            <label>Username:
+              <input className="username-input"
+                     type="text"
+                     value={this.state.username}
+                     onChange={this.update("username")} />
+            </label>
+            <br/>
+            {fullName}
+            <br/>
+            <label>Password:
+              <input className="password-input"
+                     type="password"
+                     value={this.state.password}
+                     onChange={this.update("password")} />
+            </label>
+            <br/>
+            <input type="submit" value="Submit" />
+          </form>
+        </section>
       </div>
 
     );
