@@ -5,10 +5,13 @@ import
     requestDeletePhoto,
     receiveAllPhotos,
     receiveErrors,
-    receiveSinglePhoto
+    receiveSinglePhoto,
+    createPhoto,
+    removePhotoFromStore
     } from '../actions/photos_actions';
 
-import { fetchPhotos, fetchSinglePhoto } from '../util/photo_api_util';
+import { fetchPhotos, fetchSinglePhoto, addPhoto, deletePhoto }
+  from '../util/photo_api_util';
 
 const PhotosMiddleware = ({getState, dispatch}) => next => action => {
 
@@ -38,11 +41,38 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
       fetchSinglePhoto(action.id, success, error);
       break;
 
+//FIXME
+    case PhotoConstants.CREATE_PHOTO:
+      success = (data) => {
+        dispatch(receiveSinglePhoto(data));
+      };
+      error = (data) => {
+        dispatch(receiveErrors(data));
+      };
+
+      addPhoto(action.photo, success, error);
+      break;
+
+//FIXME
+    case PhotoConstants.REQUEST_DELETE_PHOTO:
+      console.log(action.id);
+      success = (data) => {
+        dispatch(removePhotoFromStore(data));
+      };
+      error = (data) => {
+        dispatch(receiveErrors(data));
+      };
+
+      deletePhoto(action.id, success, error);
+      break;
+
     default:
       return next(action);
   }
 };
 
+window.removePhotoFromStore = removePhotoFromStore;
+window.createPhoto = createPhoto;
 window.requestAllPhotos = requestAllPhotos;
 window.requestSinglePhoto = requestSinglePhoto;
 export default PhotosMiddleware;

@@ -19,9 +19,9 @@ export const PhotosReducer = function(state = _nullPhoto, action) {
       return merge({}, state, newState);
 
     case PhotoConstants.RECEIVE_SINGLE_PHOTO:
-      const photoId = action.photo.id;
-      const photo = action.photo;
-      const newPhotoState = merge({}, state.photos, {photoId: photo});
+      let photoId = action.photo.id;
+      let photo = action.photo;
+      let newPhotoState = merge({}, state.photos, {[photoId]: photo});
       return merge({}, _nullPhoto, {photos: newPhotoState});
 
     case PhotoConstants.REMOVE_PHOTO_FROM_STORE:
@@ -31,6 +31,15 @@ export const PhotosReducer = function(state = _nullPhoto, action) {
 
     case PhotoConstants.RECEIVE_ERRORS:
       return merge({}, state, {errors: action.errors});
+
+
+
+    // case PhotoConstants.CREATE_PHOTO:
+    //   photo = action.photo;
+    //   newPhotoState = merge({}, state.photos, {photo});
+    //   return merge({}, _nullPhoto, {photos: newPhotoState});
+
+
 
     default: return state;
   }

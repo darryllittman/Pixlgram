@@ -19,29 +19,30 @@ export const fetchSinglePhoto = (id, success, error) => {
   });
 };
 
-// export const createPhoto = (photo, success, error) => {
-//   $.ajax({
-//     method: "POST",
-//     url: "/api/photos",
-//     data: {photo: {user_id: 1, location: "SF", caption: "Netflix and Chill"}},
-//     success,
-//     error
-//   });
-// };
+export const addPhoto = (photo, success, error) => {
+  // debugger
+  $.ajax({
+    method: "POST",
+    url: "/api/photos",
+    data: {photo: {
+                              caption: `${photo.caption}`,
+                              id: `${photo.id}`,
+                              user_id: `${photo.user_id}`,
+                              location: `${photo.location}`
+                          
+                    }
+          },
+    success,
+    error
+  });
+};
 
-
-// $.ajax({
-//   method: "POST",
-//   url: "/api/photos",
-//   data: {photo: {user_id: 1, location: "SF", caption: "Netflix and Chill"}},
-//   success: (data)=> (console.log(data)),
-//   error: (data)=> (console.log(data))
-// });
-
-
-// $.ajax({
-//   method: "DELETE",
-//   url: "/api/photos",
-//   success: (data)=> (console.log(data)),
-//   error: (data)=> (console.log(data))
-// });
+export const deletePhoto = (id, success, error) => {
+  // debugger
+  $.ajax({
+    method: "DELETE",
+    url: `/api/photos/${id}`,
+    success,
+    error
+  });
+};

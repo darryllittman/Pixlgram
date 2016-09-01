@@ -5,8 +5,15 @@ export const PhotoConstants = {
   RECEIVE_SINGLE_PHOTO: "RECEIVE_SINGLE_PHOTO",
   REQUEST_DELETE_PHOTO: "REQUEST_DELETE_PHOTO",
   REMOVE_PHOTO_FROM_STORE: "REMOVE_PHOTO_FROM_STORE",
-  RECEIVE_ERRORS: "RECEIVE_ERRORS"
+  RECEIVE_ERRORS: "RECEIVE_ERRORS",
+  CREATE_PHOTO: "CREATE_PHOTO",
+  DELETE_PHOTO: "DELETE_PHOTO"
 };
+
+export const createPhoto = (photo) => ({
+  type: PhotoConstants.CREATE_PHOTO,
+  photo
+});
 
 export const requestAllPhotos = () => ({
   type: PhotoConstants.REQUEST_ALL_PHOTOS
