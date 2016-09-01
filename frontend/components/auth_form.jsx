@@ -22,8 +22,6 @@ class AuthForm extends React.Component {
       return (title === "Login") ? that.props.login(that.state) :
         that.props.signup(that.state);
     };
-
-
   }
 
   render() {
