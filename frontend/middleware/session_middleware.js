@@ -6,7 +6,7 @@ import {
 
 import { hashHistory } from 'react-router';
 
-import { receiveCurrentUser, receiveErrors, SessionConstants}
+import { receiveCurrentUser, receiveErrors, SessionConstants }
   from '../actions/session_actions';
 
 const SessionMiddleware = ({getState, dispatch}) => next => action => {

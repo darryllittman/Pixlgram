@@ -4,6 +4,7 @@ import App from './app';
 import AuthForm from './auth_form';
 import AuthFormContainer from "./auth_form_container";
 import Greeting from './greeting';
+import Photo from "./photo";
 
 const AppRouter = () => (
   <Router history={ hashHistory }>
