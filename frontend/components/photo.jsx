@@ -20,4 +20,4 @@ const Photo = ({ router }) => (
   </div>
 );
 
-export default Photo;
+export default withRouter(Photo);
