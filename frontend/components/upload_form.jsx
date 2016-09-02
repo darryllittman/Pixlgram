@@ -11,12 +11,15 @@ class UploadForm extends React.Component {
     this.locationChange = this.locationChange.bind(this);
     this.captionChange = this.captionChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.photoWaiting = false;
   }
 
   uploadCallback (error, results) {
     if(!error) {
-      //save url to state
+
+      this.photoWaiting = true;
       this.setState({url: results[0].url});
+
     } else {
       console.log(error, results);
     }
@@ -45,11 +48,20 @@ class UploadForm extends React.Component {
   }
 
   render() {
+    let uploadButtonMessage;
+
+    if (this.photoWaiting) {
+      uploadButtonMessage = "Photo Ready for Upload";
+    } else {
+      uploadButtonMessage = "Select Photo";
+    }
+
+
     return (
       <div className="upload-form">
         <h2>Add A Photo</h2>
         <button onClick={this.upload}>
-          Select Photo
+          {uploadButtonMessage}
         </button>
 
         <label>Location:
