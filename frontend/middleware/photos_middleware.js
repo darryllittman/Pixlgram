@@ -13,6 +13,8 @@ import
 import { fetchPhotos, fetchSinglePhoto, addPhoto, deletePhoto }
   from '../util/photo_api_util';
 
+import { hashHistory } from 'react-router';
+
 const PhotosMiddleware = ({getState, dispatch}) => next => action => {
 
 
@@ -43,12 +45,14 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
 
     case PhotoConstants.CREATE_PHOTO:
       success = (data) => {
+        debugger
         dispatch(receiveSinglePhoto(data));
+        hashHistory.push(`photos/${data.id}`);
       };
       error = (data) => {
         dispatch(receiveErrors(data));
       };
-
+debugger
       addPhoto(action.photo, success, error);
       break;
 

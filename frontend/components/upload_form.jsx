@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 class UploadForm extends React.Component {
   constructor(props) {
     super(props);
-    //form fields w/initial values
+
     this.state = {caption: "", location: "", url: ""};
     this.upload = this.upload.bind(this);
     this.uploadCallback = this.uploadCallback.bind(this);
@@ -45,6 +45,7 @@ class UploadForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createPhoto(this.state);
+    //want to push to /photos/:id, but how do I have access to :id from here?
     this.props.router.push("/photos");
   }
 
