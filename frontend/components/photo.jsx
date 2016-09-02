@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
-const Photo = (props) => (
+
+const Photo = (props) => {return(
   <div>
     <img src="" />
 
@@ -18,6 +19,7 @@ const Photo = (props) => (
 
     <textarea className="add-comment"></textarea>
   </div>
-);
+);};
+
 
 export default withRouter(Photo);

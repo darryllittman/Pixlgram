@@ -26,7 +26,6 @@ export const addPhoto = (photo, success, error) => {
     data: {photo: {
                     caption: `${photo.caption}`,
                     id: `${photo.id}`,
-                    user_id: `${photo.user_id}`,
                     location: `${photo.location}`
                   }
           },

@@ -6,6 +6,7 @@ import AuthFormContainer from "./auth_form_container";
 import Greeting from './greeting';
 import Photo from "./photo";
 import PhotoContainer from './photo_container';
+import UploadFormContainer from './upload_form_container';
 
 const AppRouter = () => (
   <Router history={ hashHistory }>
@@ -13,7 +14,9 @@ const AppRouter = () => (
       <IndexRoute component={ Greeting } />
       <Route path="login" component={ AuthFormContainer } />
       <Route path="signup" component={ AuthFormContainer } />
-      <Route path="photos" component={ PhotoContainer } />
+      <Route path="photos" component={ PhotoContainer }></Route>
+      <Route path="photos/add" component={ UploadFormContainer }></Route>
+
     </Route>
   </Router>
 );
