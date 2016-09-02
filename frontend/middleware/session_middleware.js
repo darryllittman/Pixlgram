@@ -11,7 +11,7 @@ import { receiveCurrentUser, receiveErrors, SessionConstants }
 
 const SessionMiddleware = ({getState, dispatch}) => next => action => {
   const successCallback = user => {
-    hashHistory.push("/");
+    hashHistory.push("/photos");
     dispatch(receiveCurrentUser(user));
   };
   const errorCallback = xhr => {

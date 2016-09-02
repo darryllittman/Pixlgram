@@ -41,7 +41,6 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
       fetchSinglePhoto(action.id, success, error);
       break;
 
-//FIXME
     case PhotoConstants.CREATE_PHOTO:
       success = (data) => {
         dispatch(receiveSinglePhoto(data));
@@ -53,7 +52,6 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
       addPhoto(action.photo, success, error);
       break;
 
-//FIXME
     case PhotoConstants.REQUEST_DELETE_PHOTO:
       console.log(action.id);
       success = (data) => {

@@ -12,6 +12,7 @@ const AppRouter = () => (
       <IndexRoute component={ Greeting } />
       <Route path="login" component={ AuthFormContainer } />
       <Route path="signup" component={ AuthFormContainer } />
+      <Route path="photos" component={ Photo } />
     </Route>
   </Router>
 );

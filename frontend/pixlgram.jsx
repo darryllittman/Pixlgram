@@ -7,22 +7,23 @@ import { SessionConstants, login, logout, signup, receiveCurrentUser }
 import * as ApiUtil from './util/session_api_util';
 
 //
-// window.login = login;
-// window.logout = logout;
-// window.signup = signup;
-// window.ApiUtil = ApiUtil;
-// window.receiveCurrentUser = receiveCurrentUser;
+window.login = login;
+window.logout = logout;
+window.signup = signup;
+window.ApiUtil = ApiUtil;
+window.receiveCurrentUser = receiveCurrentUser;
 
-const configuredStore = window.store = configureStore();
 
 document.addEventListener("DOMContentLoaded", () => {
+  const preloadedState = {session: {currentUser: window.currentUser}};
+  const configuredStore = window.store = configureStore(preloadedState);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={configuredStore} />, root);
 });
 
 window.test = () => {
   const success = (data) => configuredStore.dispatch(receiveCurrentUser(data));
-  const user = {username: "user2", password: "password"};
+  const user = {username: "user 4", password: "password"};
   const errorCallback = (e) => console.log(e);
 
   configuredStore.dispatch(login(user, success, errorCallback));

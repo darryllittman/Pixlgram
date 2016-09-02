@@ -19,7 +19,8 @@ class AuthForm extends React.Component {
     const that = this;
     return (e) => {
       e.preventDefault();
-      return (title === "Login") ? that.props.login(that.state) :
+      return (this.props.router.isActive('/login')) ?
+        that.props.login(that.state) :
         that.props.signup(that.state);
     };
   }
