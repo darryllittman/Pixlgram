@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
-const Photo = ({ router }) => (
+const Photo = (props) => (
   <div>
     <img src="" />
 
