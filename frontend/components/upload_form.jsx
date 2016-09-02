@@ -45,6 +45,7 @@ class UploadForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createPhoto(this.state);
+    this.props.router.push("/photos");
   }
 
   render() {
