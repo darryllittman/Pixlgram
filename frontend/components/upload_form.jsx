@@ -15,9 +15,8 @@ class UploadForm extends React.Component {
 
   uploadCallback (error, results) {
     if(!error) {
-      //dispatch action to save url to state
-      //FIXME:find where in results is url
-      this.setState({url: results});
+      //save url to state
+      this.setState({url: results[0].url});
     } else {
       console.log(error, results);
     }
@@ -45,13 +44,12 @@ class UploadForm extends React.Component {
     this.props.createPhoto(this.state);
   }
 
-
   render() {
     return (
       <div className="upload-form">
-
+        <h2>Add A Photo</h2>
         <button onClick={this.upload}>
-          Upload Photo
+          Select Photo
         </button>
 
         <label>Location:
@@ -62,7 +60,7 @@ class UploadForm extends React.Component {
           <input type="text" onChange={this.captionChange} />
         </label>
 
-        <input type="submit" onClick={this.handleSubmit} />
+        <input type="submit" value="Add Photo" onClick={this.handleSubmit} />
       </div>
     );
   }
