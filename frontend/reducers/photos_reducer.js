@@ -21,7 +21,7 @@ export const PhotosReducer = function(state = _nullPhoto, action) {
     case PhotoConstants.RECEIVE_SINGLE_PHOTO:
       let photoId = action.photo.id;
       let photo = action.photo;
-  debugger
+  
       let newPhotoState = merge({}, state.photos, {[photoId]: photo});
       return merge({}, _nullPhoto, {photos: newPhotoState});
 

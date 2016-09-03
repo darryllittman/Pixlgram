@@ -46,7 +46,7 @@ class UploadForm extends React.Component {
     e.preventDefault();
     this.props.createPhoto(this.state);
     //want to push to /photos/:id, but how do I have access to :id from here?
-    this.props.router.push("/photos");
+    // this.props.router.push("/photos");
   }
 
   render() {
