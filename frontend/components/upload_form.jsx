@@ -45,15 +45,15 @@ class UploadForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createPhoto(this.state);
-    //want to push to /photos/:id, but how do I have access to :id from here?
-    // this.props.router.push("/photos");
   }
 
   render() {
     let uploadButtonMessage;
 
     if (this.photoWaiting) {
-      uploadButtonMessage = "Photo Ready for Upload";
+      uploadButtonMessage = <label>"Photo Ready For Upload"
+                              <img src={this.state.url} />
+                            </label>;
     } else {
       uploadButtonMessage = "Select Photo";
     }
