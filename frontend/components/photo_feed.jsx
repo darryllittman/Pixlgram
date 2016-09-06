@@ -16,7 +16,17 @@ class PhotoFeed extends React.Component {
       allPhotos = allPhotos.slice(0, allPhotos.length - 2).reverse();
       allPhotos = allPhotos.slice(0, 20);
       const listItems = allPhotos.map ((id) => {
-        return <li key={id}><img src={this.props.photos[id].url} /></li>;
+        return <ul key={id}>
+                  <li>
+                    <img src={this.props.photos[id].url} />
+                  </li>
+                  <li>
+                    {this.props.photos[id].caption}
+                  </li>
+                  <li>
+                    {this.props.photos[id].location}
+                  </li>
+                </ul>;
       });
 
       return (
