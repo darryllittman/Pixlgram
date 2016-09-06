@@ -58,7 +58,6 @@ class UploadForm extends React.Component {
       uploadButtonMessage = "Select Photo";
     }
 
-
     return (
       <div className="upload-form">
         <h2>Add A Photo</h2>

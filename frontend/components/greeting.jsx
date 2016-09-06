@@ -16,7 +16,7 @@ const Greeting = ({ router }) => (
         <section className="entry-photo">Photo Here</section>
 
         <section className="entry-buttons">
-          <header><h1>Pixlgram</h1></header>
+          <header className="logo"><h1>Pixlgram</h1></header>
 
           <button className="guest-login-button">
                   Guest Login
