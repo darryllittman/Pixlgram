@@ -49,6 +49,7 @@ class AuthForm extends React.Component {
 
 
         <section className="auth-form">
+          <h4>{this.props.errors}</h4>
           <h1 className="logo">Pixlgram</h1>
           <h3 className="auth-form-title">{title}</h3>
 
