@@ -46,8 +46,7 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
     case PhotoConstants.CREATE_PHOTO:
       success = (data) => {
         dispatch(receiveSinglePhoto(data));
-        debugger
-        hashHistory.push(`/photos`);
+        hashHistory.push(`/photos/${data.id}`);
 
       };
       error = (data) => {
