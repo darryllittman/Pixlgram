@@ -2,6 +2,7 @@ class Api::PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     @photo.user_id = current_user.id
+    @comments = @photo.comments
 
     if @photo.save
       render "api/photos/show"
@@ -11,6 +12,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def index
+    @comments = Comment.all
     @photos = Photo.all
   end
 
