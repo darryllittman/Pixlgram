@@ -6,3 +6,16 @@ export const fetchSingleComment = (id, success, error) => {
     error
   });
 };
+
+export const addComment = (comment, success, error) => {
+  $.ajax({
+    method: "POST",
+    url: "/api/comments",
+    data: {comment: {
+      body: `${comment.body}`,
+      photo_id: `${comment.photo_id}`
+    }},
+    success,
+    error
+  });
+};

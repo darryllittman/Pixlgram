@@ -10,7 +10,7 @@ import {
   removeCommentFromStore,
 } from '../actions/comments_actions';
 
-import { fetchSingleComment } from '../util/comment_api_util';
+import { fetchSingleComment, addComment } from '../util/comment_api_util';
 
 import { hashHistory } from 'react-router';
 
@@ -28,6 +28,14 @@ const CommentsMiddleware = ({getState, dispatch}) => next => action => {
 
       fetchSingleComment(action.id, success, error);
       break;
+
+    case CommentsConstants.CREATE_COMMENT:
+      success = (data) => {
+        dispatch(receiveSingleComment(data));
+        hashHistory.push(`/photos/${data.photo_id}`);
+      };
+
+      addComment(action.comment, success, error);
     // case CommentsConstants.REQUEST_ALL_COMMENTS:
     //   success = (data) => {
     //     dispatch(receiveAllComments);
@@ -41,5 +49,6 @@ const CommentsMiddleware = ({getState, dispatch}) => next => action => {
 };
 
 window.requestSingleComment = requestSingleComment;
+window.createComment = createComment;
 
 export default CommentsMiddleware;
