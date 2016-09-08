@@ -57,7 +57,7 @@ class UploadForm extends React.Component {
     } else {
       uploadButtonMessage = "Select Photo";
     }
-
+debugger
     return (
       <div className="upload-form">
         <h2>Add A Photo</h2>
@@ -72,7 +72,6 @@ class UploadForm extends React.Component {
         <label>Caption:
           <input type="text" onChange={this.captionChange} />
         </label>
-        {window.CLOUDINARY_OPTIONS}
 
         <input type="submit" value="Add Photo" onClick={this.handleSubmit} />
       </div>

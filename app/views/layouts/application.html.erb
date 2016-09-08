@@ -7,20 +7,18 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <script src="//widget.cloudinary.com/global/all.js"
-          type="text/javascript">
-  </script>
   <script type="text/javascript">
 
-          CLOUDINARY_OPTIONS = {
-            cloud_name: "<%=ENV['CLOUD_NAME']%>",
-            upload_preset: "<%= ENV['UPLOAD_PRESET'] %>"
-            console.log(cloud_name);
-            console.log(upload_preset);
-  //         CLOUDINARY_OPTIONS = {
-  //           cloud_name: "dkfx9lmbh",
-  //           upload_preset: "bo0ob5js"
+  CLOUDINARY_OPTIONS = {
+    cloud_name: "<%=ENV['CLOUD_NAME']%>",
+    upload_preset: "<%= ENV['UPLOAD_PRESET'] %>"
+    //         CLOUDINARY_OPTIONS = {
+    //           cloud_name: "dkfx9lmbh",
+    //           upload_preset: "bo0ob5js"
   };
+  </script>
+  <script src="//widget.cloudinary.com/global/all.js"
+          type="text/javascript">
   </script>
 </head>
 <body>
