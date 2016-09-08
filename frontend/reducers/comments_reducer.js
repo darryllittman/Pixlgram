@@ -24,6 +24,12 @@ export const CommentsReducer = function(state = _nullComment, action) {
       let newCommentState = merge({}, state.comments, {[commentId]: comment});
       return merge({}, _nullComment, newCommentState);
 
+    // case CommentsConstants.REMOVE_COMMENT_FROM_STORE:
+    //
+    //   const newS = Object.assign({}, state.comments);
+    //   delete newS[action.id];
+    //   return newS;
+
     default: return state;
   }
 };

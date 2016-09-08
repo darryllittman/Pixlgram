@@ -57,7 +57,7 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
       break;
 
     case PhotoConstants.REQUEST_DELETE_PHOTO:
-      console.log(action.id);
+      // console.log(action.id);
       success = (data) => {
         dispatch(removePhotoFromStore(data));
       };

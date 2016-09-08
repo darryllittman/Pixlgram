@@ -28,7 +28,7 @@ class UploadForm extends React.Component {
   upload(e) {
     e.preventDefault();
     window.cloudinary.openUploadWidget(
-      CLOUDINARY_OPTIONS, this.uploadCallback
+      window.CLOUDINARY_OPTIONS, this.uploadCallback
     );
   }
 

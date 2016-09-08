@@ -19,3 +19,12 @@ export const addComment = (comment, success, error) => {
     error
   });
 };
+
+export const deleteComment = (id, success, error) => {
+  $.ajax({
+    method: "DELETE",
+    url: `/api/comments/${id}`,
+    success,
+    error
+  });
+};
