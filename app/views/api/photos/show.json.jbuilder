@@ -1,1 +1,2 @@
-json.extract! @photo, :id, :user_id, :location, :caption, :url, @comments
+debugger
+json.extract! @photo, :id, :user_id, :location, :caption, :url
