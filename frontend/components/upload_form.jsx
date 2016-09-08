@@ -28,7 +28,6 @@ class UploadForm extends React.Component {
   upload(e) {
     e.preventDefault();
     window.cloudinary.openUploadWidget(
-      debugger
       window.CLOUDINARY_OPTIONS, this.uploadCallback
     );
   }
@@ -73,6 +72,7 @@ class UploadForm extends React.Component {
         <label>Caption:
           <input type="text" onChange={this.captionChange} />
         </label>
+        {window.CLOUDINARY_OPTIONS}
 
         <input type="submit" value="Add Photo" onClick={this.handleSubmit} />
       </div>
